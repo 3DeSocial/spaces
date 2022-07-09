@@ -6,28 +6,24 @@
 
 	onMount(() => {
 	console.log('creating scene');
+		el = document.querySelector('#space-ctr');
 		createScene(el);
 	});
 </script>
+<div class="space-ctr" id="space-ctr">
+</div>
+<div bind:this={el} id="nft-ctr" class="nft-ctr">
+	<div class="container" id="nft-img">
+	</div>
+	<div id="nft-overlay-holder" class="svelte-n8t4is">
 
-
-<ul class='nft-feed'>
-<li class="nft-post" data-nft="e942aa869c0181a3dab09248d5604c9b3ff9f234058ccee6816acf260f52e08e">
-		<p>Test lambo mint</p>
-		<div class="container" id="nft-container">
-		<img id="nft-preview-img" class="nft-preview" src="https://images.deso.org/9a6f0f219fbb948e64f367dadf7aed173f88c2a3ff1c4715fb1318e139dc4ffe.webp"/>
+		<div id="nft-overlay" class="nft-3d-overlay svelte-n8t4is">
+			<span id="pos-display" class="pos">x:0 , y:0 , z:0</span>
+			<!--<select id="layout" class="svelte-n8t4is">
+				<option value="amphitheater">Amphitheater</option><option value="round_showroom">roundshowroom</option><option value="art_showroom">art_showroom</option><option value="aztec_temple">aztec_temple</option><option value="big_room">big_room</option></select> -->
+				
 		</div>
-		<p class="nft-viewer" data-nft="e942aa869c0181a3dab09248d5604c9b3ff9f234058ccee6816acf260f52e08e">Loading...</p>
-		<form id="nft-overlay" class="nft-3d-overlay">
-		    <dl>
-		      <dt>Show Scenery</dt>
-		      <dd><input type="checkbox" id="floor" name="floor" value="Show Floor" checked="checked"/></dd>
-		      <dt>Show Sky</dt>
-		      <dd><input type="checkbox" id="sky" name="sky" value="Show Sky" checked="checked"/></dd>
-		    </dl>
-  		</form>  
-</li>
-</ul>	
-
+	</div>
+</div>	
   
 

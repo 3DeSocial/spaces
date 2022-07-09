@@ -1,0 +1,8 @@
+Model Information:
+* title:	Modern architectural style gallery museum
+* source:	https://sketchfab.com/3d-models/modern-architectural-style-gallery-museum-0bb4ed06576a4264885861b13c0ae6a5
+* author:	xinige (https://sketchfab.com/l13261404616)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

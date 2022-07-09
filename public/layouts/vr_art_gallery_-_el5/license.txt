@@ -1,0 +1,8 @@
+Model Information:
+* title:	VR Art Gallery - EL5
+* source:	https://sketchfab.com/3d-models/vr-art-gallery-el5-e3bda3a7086c49f0a84948fd6808bcf4
+* author:	lazae (https://sketchfab.com/lazae)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

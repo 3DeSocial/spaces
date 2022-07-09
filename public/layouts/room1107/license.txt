@@ -1,0 +1,11 @@
+Model Information:
+* title:	Room1107
+* source:	https://sketchfab.com/3d-models/room1107-1317d8b7d2084e5db786aef8d84c1758
+* author:	fangzhangmnm (https://sketchfab.com/fangzhangmnm)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Room1107" (https://sketchfab.com/3d-models/room1107-1317d8b7d2084e5db786aef8d84c1758) by fangzhangmnm (https://sketchfab.com/fangzhangmnm) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
