@@ -31,8 +31,6 @@ export const createScene = (el) => {
   fetch ('https://backend.nftz.zone/api/creator/nfts?datatype=0&username='+nftUserName )
     .then((req)=>{
       req.json().then((res)=>{
-        console.log(res);
-
         res.forEach((nft, idx)=>{
           if(nft.postExtraData){
             if(nft.postExtraData['3DExtraData']){
@@ -41,9 +39,7 @@ export const createScene = (el) => {
                                   params:params,
                                   imageUrls: nft.imageURLs};
                   nfts3D.push(itemData);
-                  console.log('idx',idx,res.length);
                   if((idx===res.length-1)||(idx===12)){
-                    console.log(nfts3D);
                     spaceViewer.initSpace({items:nfts3D});
                   }
                 });
@@ -55,15 +51,10 @@ export const createScene = (el) => {
                                   params:params,
                                   imageUrls: nft.imageURLs};
                   nfts3D.push(itemData);
-                  console.log('idx',idx,res.length);
-
                   if((idx===res.length-1)||(idx===12)){
-                    console.log(nfts3D);                    
                     spaceViewer.initSpace({items:nfts3D});
                   }
                 });
-
-
             }
           }
         })
@@ -119,10 +110,8 @@ const fetchDetail = (nftPostHashHex) =>{
             let versions = extraDataParser.getAvailableVersions(0,'gltf');
             let path3D = versions[0];
 
-            if(path3D.indexOf('.')>-1){
+            if(path3D.indexOf('.')>-1){ // there is a file extension
               let modelUrl = extraDataParser.getModelPath(0,'gltf','any');
-;
-
               // we have the full path, load model
               let params = {
                 containerId: 'nft-ctr',
