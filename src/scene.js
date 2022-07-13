@@ -12,8 +12,8 @@ export const createScene = (el) => {
       sceneScale: 0.01,
       scaleModelToHeight:2,
       scaleModelToWidth: 2,
-      scaleModelToDepth: 2,   
-      playerStartPos: {x:0,y:0,z:0}
+      scaleModelToDepth: 2,
+      playerStartPos: {x:0,y:2,z:0}
     },
     'art1':{
       sceneryPath: '/layouts/vr_art_gallery_-_el5/scene.gltf',
@@ -86,7 +86,7 @@ console.log(options);
   let nfts3D = [];
   let maxNFTs = 12; //test with 12 NFTs
 
-  fetch ('https://backend.nftz.zone/api/creator/nfts?datatype=3&username='+nftUserName+'&sortType=0')
+  fetch ('https://backend.nftz.zone/api/creator/nfts?datatype=0&username='+nftUserName)
     .then((req)=>{
       req.json().then((res)=>{
         res.forEach((nft, idx)=>{
@@ -105,8 +105,6 @@ console.log(options);
                   console.log('fetchDetail: ',err);
                 })
 
-          } else {
-            console.log('no not 3d', idx, nft.postHashHex);
           }
         })
       });
@@ -171,7 +169,7 @@ const fetchDetail = (nftPostHashHex) =>{
                 modelUrl:modelUrl,
                 format:'gltf'
               };
-              console.log('FILE EXTENSION METHOD, url is: ',modelUrl);
+            //  console.log('FILE EXTENSION METHOD, url is: ',modelUrl);
 
             resolve(params);
             return;
@@ -191,7 +189,7 @@ const fetchDetail = (nftPostHashHex) =>{
                 nftPostHashHex: nftPostHashHex,
                 format:'gltf'
               };
-              console.log('REQUEST PATH METHOD: ',nftPostHashHex,path3D);
+             // console.log('REQUEST PATH METHOD: ',nftPostHashHex,path3D);
 
               resolve(params);
               return;
