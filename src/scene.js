@@ -6,6 +6,8 @@ export const createScene = (el) => {
   const urlParams = new URLSearchParams(window.location.search);
   const nftUserName = urlParams.get('username');
   const sceneryName = urlParams.get('scenery');
+  const vrControls = urlParams.get('vrcontrols');
+  const avatar = urlParams.get('avatar');
 
   let sceneryOptions = {'modern':{
       sceneryPath: '/layouts/modern_architectural_style_gallery_museum/scene.gltf',
@@ -34,11 +36,21 @@ export const createScene = (el) => {
     },
     'amphitheater':{
       sceneryPath: '/layouts/amphitheater/scene.gltf',
-      sceneScale: 0.2,
+      sceneScale: 1,
       scaleModelToHeight: 2,
       scaleModelToWidth: 2,
       scaleModelToDepth: 2,
-      playerStartPos: {x:0,y:10,z:0}      
+      playerStartPos: {x:0,y:10,z:0}
+    /*,
+      sceneAssets: [{
+                modelUrl:'/models/NFTz3Dlogo.glb',
+                format:'gltf',
+                position: {x:-30,y:30,z:-15},
+                rotation: {x:(Math.PI/4),y:0,z:0},
+                width: 60,
+                height: 30,
+                depth: 10 
+              }]*/
     },
     'gallery3':{
       sceneryPath: '/layouts/gallery_v0003/scene.gltf',
@@ -47,8 +59,34 @@ export const createScene = (el) => {
       scaleModelToWidth: 2,
       scaleModelToDepth: 2,
       playerStartPos: {x:0,y:0,z:0}      
+    },
+    'appartment':{
+      sceneryPath: '/layouts/appartment/scene.gltf',
+      sceneScale: 1,
+      scaleModelToHeight: 2,
+      scaleModelToWidth: 2,
+      scaleModelToDepth: 2,
+      playerStartPos: {x:0,y:0,z:0}      
+    },
+    'art_showroom':{ // NOT working
+      sceneryPath: '/layouts/art_showroom/scene.gltf',
+      sceneScale: 1,
+      scaleModelToHeight: 2,
+      scaleModelToWidth: 2,
+      scaleModelToDepth: 2,
+      playerStartPos: {x:0,y:0,z:0}      
+    },
+    'big_room':{
+      sceneryPath: '/layouts/big_room/scene.gltf',
+      sceneScale: 1,
+      scaleModelToHeight: 2,
+      scaleModelToWidth: 2,
+      scaleModelToDepth: 2,
+      playerStartPos: {x:0,y:0,z:0}      
     }
+
   };
+
 
   let defaultOptions = {
     el:el,
@@ -68,8 +106,9 @@ export const createScene = (el) => {
     scaleModelToWidth: 2,
     scaleModelToDepth: 2,   
     playerStartPos: {x:0,y:0,z:0},  // location in the environment where the player will appear
-    avatarSize: {width: 1, height:1, depth:1} // Max dimensions of avatar
-  };
+    avatarSize: {width: 1, height:1, depth:1}, // Max dimensions of avatar
+    vrType:"walking" // default to walking unless vrcontrols=flying is in url params
+  };            
 
   let selectedSceneryOptions = sceneryOptions[sceneryName];
 
@@ -78,13 +117,13 @@ export const createScene = (el) => {
       ...defaultOptions,
       ...selectedSceneryOptions
   };
-console.log(options);
+
   //initialize NFT viewer front end
   let spaceViewer = new D3D.D3DSpaceViewer(options);
 
   //create array of nfts to view
   let nfts3D = [];
-  let maxNFTs = 12; //test with 12 NFTs
+  let maxNFTs = 10; //test with 10 NFTs
 
   fetch ('https://backend.nftz.zone/api/creator/nfts?datatype=0&username='+nftUserName)
     .then((req)=>{
