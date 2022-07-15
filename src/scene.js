@@ -83,12 +83,24 @@ export const createScene = (el) => {
       scaleModelToWidth: 2,
       scaleModelToDepth: 2,
       playerStartPos: {x:0,y:0,z:0}      
+    },
+    'minimaldream':{
+      sceneryPath: '/layouts/minimaldream/MinimalDream_3DE.glb',
+      sceneScale: 2,
+      scaleModelToHeight: 1,
+      scaleModelToWidth: 1,
+      scaleModelToDepth: 1,
+      playerStartPos: {x:0,y:2,z:1},   
     }
+
+
+
 
   };
 
 
   let defaultOptions = {
+    walkSpeed: 10,
     el:el,
     defaultLoader: 'gltf',
     firstPerson: true,    
