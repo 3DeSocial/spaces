@@ -1,7 +1,7 @@
 import * as THREE from 'three';    
 import * as D3D from '3d-nft-viewer'
 let counter = 0;
-const PROXYURL = 'http://localhost:3001/proxy?url='; //URL and parameter to add to request for image
+const PROXYURL = 'http://nftzexpress.azurewebsites.net/proxy?url='; //URL and parameter to add to request for image
   //create array of nfts to view
   let nfts3D = [];
   let nfts2D = [];
@@ -237,7 +237,7 @@ const parse3DNFTData = (nft) =>{
 const parse2DNFTData = async(nft) =>{
   return new Promise(( resolve, reject ) => {
     let imageUrl = nft.imageURLs[0];
-    let proxyImageURL = PROXYURL +imageUrl
+    let proxyImageURL = imageUrl
     let nftData = nft;
     var img = new Image();
 
@@ -260,12 +260,12 @@ const parse2DNFTData = async(nft) =>{
           resolve(nftImgData);
     };
 
-    img.addEventListener('error', (img) =>{
+ /*   img.addEventListener('error', (img) =>{
       console.log('could not load image',img.src)
       reject(img.src)
-    });
-    console.log('proxyImageURL: ',proxyImageURL);
-    img.src = proxyImageURL;
+    });*/
+    console.log('imageUrl: ',imageUrl);
+    img.src = imageUrl;
 
   })
 }
