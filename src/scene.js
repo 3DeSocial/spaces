@@ -130,10 +130,10 @@ let allNFTS = [];
 galleryData.items.forEach((nft, idx)=>{
         fetchDetail(nft.id).then((params)=>{
 
-          let itemData = {nftPostHashHex: nft.postHashHex,
+          let itemData = {nftPostHashHex: nft.id,
                           params:params,
-                          imageUrls: nft.imageURLs,
-                          nft:(params.nft)?params.nft:''};          
+                          imageUrls: params.nftPost.imageURLs,
+                          nft:params.nftPost};
           if(params.is3D===true){
           nfts3D.push(itemData);
         } else {
@@ -169,7 +169,7 @@ const fetchDetail = (nftPostHashHex) =>{
               parse2DNFTData(nft).then((params)=>{
                 params.width = 10;  // set maximum height and width here
                 params.height = 10;
-                params.nftPost = nft.nft;
+                params.nftPost = nft;
                 resolve(params)
               })
             };
@@ -247,23 +247,21 @@ const parse2DNFTData = async(nft) =>{
           var width = this.width;
  
           const textureLoader = new THREE.TextureLoader()
-                textureLoader.crossOrigin = "Anonymous"
-                console.log('image source: ',this.src);
+                textureLoader.crossOrigin = ""
           const texture = textureLoader.load(this.src);
 
           const geometry = new THREE.BoxGeometry( (width/250), (height/250), 0.10 );
           const materials = createMats(texture);
           const nftMesh = new THREE.Mesh( geometry, materials );
-          console.log('nftData: ',nftData);
           let nftImgData = {is3D:nft.is3D, nft:nftData, mesh: nftMesh, imageUrl: imageUrl, width:width, height:height};
-          console.log('nftImgData: ',nftData);          
           resolve(nftImgData);
     };
 
- /*   img.addEventListener('error', (img) =>{
-      console.log('could not load image',img.src)
+    img.addEventListener('error', (img, error) =>{
+      console.log('could not load image',img.src);
+      console.log(error);
       reject(img.src)
-    });*/
+    });
     console.log('imageUrl: ',imageUrl);
     img.src = imageUrl;
 
