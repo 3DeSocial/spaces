@@ -1,7 +1,8 @@
 import * as THREE from 'three';    
 import * as D3D from '3d-nft-viewer'
 let counter = 0;
-const PROXYURL = 'http://nftzexpress.azurewebsites.net/proxy?url='; //URL and parameter to add to request for image
+//const PROXYURL = 'http://nftzexpress.azurewebsites.net/proxy?url='; //URL and parameter to add to request for image
+const PROXYURL = 'http://localhost:3001/proxy?url='; //URL and parameter to add to request for image
   //create array of nfts to view
   let nfts3D = [];
   let nfts2D = [];
@@ -14,7 +15,10 @@ export const createScene = (el) => {
   const nftUserName = urlParams.get('username');
 
   /* TODO Get these parameters from NFT stored gallery preferences instead of URL  */
-  const sceneryName = urlParams.get('scenery');
+  var sceneryName = urlParams.get('scenery');
+  if(!sceneryName){
+    sceneryName = 'modern';
+  };
   let vrControls = "walking";
   let vrControlsParam =  urlParams.get('vrcontrols'); 
 
@@ -25,14 +29,25 @@ export const createScene = (el) => {
   const avatar = urlParams.get('avatar');
 
   let sceneryOptions = {'modern':{
+      hasCircleLayout: true,
+      radius: 20,
+      max2d: 12, //hexagon shape so this will be good for even layout
       sceneryPath: 'https://bitcloutweb.azureedge.net/public/3d/models/large_round_gallery_room/scene.gltf',
       sceneScale: 0.1,
-      scaleModelToHeight:2,
-      scaleModelToWidth: 2,
-      scaleModelToDepth: 2,
-      playerStartPos: {x:0,y:4,z:0}
+      scaleModelToHeight:10,
+      scaleModelToWidth: 10,
+      scaleModelToDepth: 10,
+      playerStartPos: {x:10,y:4,z:10},
+      layouts: {
+        circle: {
+          radius: 80,
+          maxNFTs: 12
+        }
+      }
+
     },
     'art1':{
+      hasCircleLayout: false,
       sceneryPath: 'https://bitcloutweb.azureedge.net/public/3d/models/art1/scene.gltf',
       sceneScale: 0.01,
       scaleModelToHeight:2,
@@ -42,6 +57,8 @@ export const createScene = (el) => {
 
     },
     'amphitheater':{
+      hasCircleLayout: true,
+      radius: 20,
       sceneryPath: 'https://bitcloutweb.azureedge.net/public/3d/models/amphitheater/scene.gltf',
       sceneScale: 1,
       scaleModelToHeight: 2,
@@ -63,7 +80,7 @@ export const createScene = (el) => {
   };
 
 
-  let defaultOptions = {
+  let options = {
     walkSpeed: 10,
     el:el,
     defaultLoader: 'gltf',
@@ -83,16 +100,10 @@ export const createScene = (el) => {
     scaleModelToDepth: 2,   
     playerStartPos: {x:0,y:4,z:0},  // location in the environment where the player will appear
     avatarSize: {width: 1, height:1, depth:1}, // Max dimensions of avatar
-    vrType:vrControls // default to walking unless vrcontrols=flying is in url params
+    vrType:vrControls, // default to walking unless vrcontrols=flying is in url params
+    sceneryOptions: sceneryOptions[sceneryName]
   };            
 
-  let selectedSceneryOptions = sceneryOptions[sceneryName];
-
-  //merge default options with selected scenery options
-  let options = {
-      ...defaultOptions,
-      ...selectedSceneryOptions
-  };
 
   //initialize NFT viewer front end
   let spaceViewer = new D3D.D3DSpaceViewer(options);
@@ -121,6 +132,20 @@ export const createScene = (el) => {
     },
     {
       "id": "87de5605d1a90936e692ae87f3544f6022eac06a6f283544d7f88c3d6e610a5d"
+    },
+    {"id":"faa40b88f3cca5b66a47ed6577ed763fbf43389ee0ab16720a57ccc42452e95f"
+    },
+    {"id":"1db9ac6961ec74bc02d56a062b52b8b8c3641ca8df0d55683a37e02ef66e08b0"
+    },
+    {"id":"440cbddf95882bd77cc561641e2210b314b76f925309467d5583ab620b1f28c5"
+    },
+    {"id":"8491d1bae3805b2602afcb23af5bd5d5cab50b400ea3f9b33b1765bdeb56f953"
+    },
+    {"id":"23a0ec171c3d7420fcd530ad2d7d7c6d2341283ae78267d67fdbe6f90cc12aea"
+    },
+    {"id":"86f7175aea37a25eff78097f3454d56aeaf9020241b46612edeeeeb8b9826323"
+    },
+    {"id":"e8f31141ba7492ac565ed53dce93edb4c27313e501f2efc8fb16468969a3a642"
     }
   ]
 };
@@ -139,20 +164,17 @@ galleryData.items.forEach((nft, idx)=>{
         } else {
           itemData.isImage = true,
           nfts2D.push(itemData);
-        }
+        };
           allNFTS.push(itemData);
-          console.log('addNFTs');
-          if((allNFTS.length===noNFTs)||(allNFTS.length===maxNFTs)){
-            
+          if(allNFTS.length-1===noNFTs-1){
             spaceViewer.initSpace({items:nfts3D, images:nfts2D}).then((message)=>{
-              console.log(spaceViewer.layoutPlotter.circlePositions);
             })
+            
           }
         });
 
   
 });
-
   
 }
 
@@ -237,7 +259,7 @@ const parse3DNFTData = (nft) =>{
 const parse2DNFTData = async(nft) =>{
   return new Promise(( resolve, reject ) => {
     let imageUrl = nft.imageURLs[0];
-    let proxyImageURL = imageUrl
+    let proxyImageURL = PROXYURL +imageUrl;
     let nftData = nft;
     var img = new Image();
 
@@ -262,8 +284,7 @@ const parse2DNFTData = async(nft) =>{
       console.log(error);
       reject(img.src)
     });
-    console.log('imageUrl: ',imageUrl);
-    img.src = imageUrl;
+    img.src = proxyImageURL;
 
   })
 }
