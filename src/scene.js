@@ -33,21 +33,21 @@ export const createScene = (el) => {
       radius: 20,
       max2d: 12, //hexagon shape so this will be good for even layout
       sceneryPath: 'https://bitcloutweb.azureedge.net/public/3d/models/large_round_gallery_room/scene.gltf',
-      sceneScale: 0.1,
-      scaleModelToHeight:20,
-      scaleModelToWidth: 20,
-      scaleModelToDepth: 20,
+      sceneScale: 0.01,
+      scaleModelToHeight:6,
+      scaleModelToWidth: 6,
+      scaleModelToDepth: 6,
       playerStartPos: {x:10,y:4,z:10},
       floorPlan: [{type:'centerPiece',
                 maxNFTs: 1},
                 {type:'circle',
-                radius: 50,
+                radius: 5,
                 maxNFTs: 3},
                 {type:'circle',
-                 radius: 175,
+                 radius: 12,
                 maxNFTs: 6},
                 {type:'circle',
-                 radius: 200,
+                 radius: 20,
                 maxNFTs: 12}]
     },
     'art1':{
@@ -129,9 +129,6 @@ export const createScene = (el) => {
       "id": "29159f42bfc28747f3d9fbc19c5a5b113e1feee111b1aa2d55a6abc2954e6c07"
     },
     {
-      "id": "1e25c4f29d76c8989db411f5c3171d87ec715ca2ad01498cb47d77ba5df7c6e5"
-    },
-    {
       "id": "62f06d33da7d269cdccbdfc5250e0a9f67dfc70814e03b7f635ab2ab315a0452"
     },
     {
@@ -158,9 +155,6 @@ export const createScene = (el) => {
       "id": "29159f42bfc28747f3d9fbc19c5a5b113e1feee111b1aa2d55a6abc2954e6c07"
     },
     {
-      "id": "1e25c4f29d76c8989db411f5c3171d87ec715ca2ad01498cb47d77ba5df7c6e5"
-    },
-    {
       "id": "62f06d33da7d269cdccbdfc5250e0a9f67dfc70814e03b7f635ab2ab315a0452"
     },
     {
@@ -185,9 +179,6 @@ export const createScene = (el) => {
     },
     {
       "id": "29159f42bfc28747f3d9fbc19c5a5b113e1feee111b1aa2d55a6abc2954e6c07"
-    },
-    {
-      "id": "1e25c4f29d76c8989db411f5c3171d87ec715ca2ad01498cb47d77ba5df7c6e5"
     },
     {
       "id": "62f06d33da7d269cdccbdfc5250e0a9f67dfc70814e03b7f635ab2ab315a0452"
@@ -214,9 +205,6 @@ export const createScene = (el) => {
     },
     {
       "id": "29159f42bfc28747f3d9fbc19c5a5b113e1feee111b1aa2d55a6abc2954e6c07"
-    },
-    {
-      "id": "1e25c4f29d76c8989db411f5c3171d87ec715ca2ad01498cb47d77ba5df7c6e5"
     },
     {
       "id": "62f06d33da7d269cdccbdfc5250e0a9f67dfc70814e03b7f635ab2ab315a0452"
@@ -280,9 +268,9 @@ const fetchDetail = (nftPostHashHex) =>{
               resolve(params)
             } else {
               parse2DNFTData(nft).then((params)=>{
-                params.width = 60;  // set maximum height and width here
-                params.height = 60;
-                params.depth = 60;
+                params.width = 5;  // set maximum height and width here
+                params.height = 5;
+                params.depth = 5;
                 params.nftPost = nft;
                 resolve(params)
               })
