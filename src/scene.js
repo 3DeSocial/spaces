@@ -34,17 +34,21 @@ export const createScene = (el) => {
       max2d: 12, //hexagon shape so this will be good for even layout
       sceneryPath: 'https://bitcloutweb.azureedge.net/public/3d/models/large_round_gallery_room/scene.gltf',
       sceneScale: 0.1,
-      scaleModelToHeight:10,
-      scaleModelToWidth: 10,
-      scaleModelToDepth: 10,
+      scaleModelToHeight:20,
+      scaleModelToWidth: 20,
+      scaleModelToDepth: 20,
       playerStartPos: {x:10,y:4,z:10},
-      layouts: {
-        circle: {
-          radius: 80,
-          maxNFTs: 12
-        }
-      }
-
+      floorPlan: [{type:'centerPiece',
+                maxNFTs: 1},
+                {type:'circle',
+                radius: 50,
+                maxNFTs: 3},
+                {type:'circle',
+                 radius: 175,
+                maxNFTs: 6},
+                {type:'circle',
+                 radius: 200,
+                maxNFTs: 12}]
     },
     'art1':{
       hasCircleLayout: false,
@@ -146,6 +150,93 @@ export const createScene = (el) => {
     {"id":"86f7175aea37a25eff78097f3454d56aeaf9020241b46612edeeeeb8b9826323"
     },
     {"id":"e8f31141ba7492ac565ed53dce93edb4c27313e501f2efc8fb16468969a3a642"
+    },
+     {
+      "id": "7630999a903663b368d1d2c2b86e39e77f30625eaca646b43b180e2be0ba4428"
+    },
+    {
+      "id": "29159f42bfc28747f3d9fbc19c5a5b113e1feee111b1aa2d55a6abc2954e6c07"
+    },
+    {
+      "id": "1e25c4f29d76c8989db411f5c3171d87ec715ca2ad01498cb47d77ba5df7c6e5"
+    },
+    {
+      "id": "62f06d33da7d269cdccbdfc5250e0a9f67dfc70814e03b7f635ab2ab315a0452"
+    },
+    {
+      "id": "87de5605d1a90936e692ae87f3544f6022eac06a6f283544d7f88c3d6e610a5d"
+    },
+    {"id":"faa40b88f3cca5b66a47ed6577ed763fbf43389ee0ab16720a57ccc42452e95f"
+    },
+    {"id":"1db9ac6961ec74bc02d56a062b52b8b8c3641ca8df0d55683a37e02ef66e08b0"
+    },
+    {"id":"440cbddf95882bd77cc561641e2210b314b76f925309467d5583ab620b1f28c5"
+    },
+    {"id":"8491d1bae3805b2602afcb23af5bd5d5cab50b400ea3f9b33b1765bdeb56f953"
+    },
+    {"id":"23a0ec171c3d7420fcd530ad2d7d7c6d2341283ae78267d67fdbe6f90cc12aea"
+    },
+    {"id":"86f7175aea37a25eff78097f3454d56aeaf9020241b46612edeeeeb8b9826323"
+    },
+    {"id":"e8f31141ba7492ac565ed53dce93edb4c27313e501f2efc8fb16468969a3a642"
+    },
+    {
+      "id": "7630999a903663b368d1d2c2b86e39e77f30625eaca646b43b180e2be0ba4428"
+    },
+    {
+      "id": "29159f42bfc28747f3d9fbc19c5a5b113e1feee111b1aa2d55a6abc2954e6c07"
+    },
+    {
+      "id": "1e25c4f29d76c8989db411f5c3171d87ec715ca2ad01498cb47d77ba5df7c6e5"
+    },
+    {
+      "id": "62f06d33da7d269cdccbdfc5250e0a9f67dfc70814e03b7f635ab2ab315a0452"
+    },
+    {
+      "id": "87de5605d1a90936e692ae87f3544f6022eac06a6f283544d7f88c3d6e610a5d"
+    },
+    {"id":"faa40b88f3cca5b66a47ed6577ed763fbf43389ee0ab16720a57ccc42452e95f"
+    },
+    {"id":"1db9ac6961ec74bc02d56a062b52b8b8c3641ca8df0d55683a37e02ef66e08b0"
+    },
+    {"id":"440cbddf95882bd77cc561641e2210b314b76f925309467d5583ab620b1f28c5"
+    },
+    {"id":"8491d1bae3805b2602afcb23af5bd5d5cab50b400ea3f9b33b1765bdeb56f953"
+    },
+    {"id":"23a0ec171c3d7420fcd530ad2d7d7c6d2341283ae78267d67fdbe6f90cc12aea"
+    },
+    {"id":"86f7175aea37a25eff78097f3454d56aeaf9020241b46612edeeeeb8b9826323"
+    },
+    {"id":"e8f31141ba7492ac565ed53dce93edb4c27313e501f2efc8fb16468969a3a642"
+    },
+     {
+      "id": "7630999a903663b368d1d2c2b86e39e77f30625eaca646b43b180e2be0ba4428"
+    },
+    {
+      "id": "29159f42bfc28747f3d9fbc19c5a5b113e1feee111b1aa2d55a6abc2954e6c07"
+    },
+    {
+      "id": "1e25c4f29d76c8989db411f5c3171d87ec715ca2ad01498cb47d77ba5df7c6e5"
+    },
+    {
+      "id": "62f06d33da7d269cdccbdfc5250e0a9f67dfc70814e03b7f635ab2ab315a0452"
+    },
+    {
+      "id": "87de5605d1a90936e692ae87f3544f6022eac06a6f283544d7f88c3d6e610a5d"
+    },
+    {"id":"faa40b88f3cca5b66a47ed6577ed763fbf43389ee0ab16720a57ccc42452e95f"
+    },
+    {"id":"1db9ac6961ec74bc02d56a062b52b8b8c3641ca8df0d55683a37e02ef66e08b0"
+    },
+    {"id":"440cbddf95882bd77cc561641e2210b314b76f925309467d5583ab620b1f28c5"
+    },
+    {"id":"8491d1bae3805b2602afcb23af5bd5d5cab50b400ea3f9b33b1765bdeb56f953"
+    },
+    {"id":"23a0ec171c3d7420fcd530ad2d7d7c6d2341283ae78267d67fdbe6f90cc12aea"
+    },
+    {"id":"86f7175aea37a25eff78097f3454d56aeaf9020241b46612edeeeeb8b9826323"
+    },
+    {"id":"e8f31141ba7492ac565ed53dce93edb4c27313e501f2efc8fb16468969a3a642"
     }
   ]
 };
@@ -189,8 +280,9 @@ const fetchDetail = (nftPostHashHex) =>{
               resolve(params)
             } else {
               parse2DNFTData(nft).then((params)=>{
-                params.width = 10;  // set maximum height and width here
-                params.height = 10;
+                params.width = 60;  // set maximum height and width here
+                params.height = 60;
+                params.depth = 60;
                 params.nftPost = nft;
                 resolve(params)
               })
@@ -272,7 +364,7 @@ const parse2DNFTData = async(nft) =>{
                 textureLoader.crossOrigin = ""
           const texture = textureLoader.load(this.src);
 
-          const geometry = new THREE.BoxGeometry( (width/250), (height/250), 0.10 );
+          const geometry = new THREE.BoxGeometry( width, height, 0.10 );
           const materials = createMats(texture);
           const nftMesh = new THREE.Mesh( geometry, materials );
           let nftImgData = {is3D:nft.is3D, nft:nftData, mesh: nftMesh, imageUrl: imageUrl, width:width, height:height};
