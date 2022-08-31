@@ -55,7 +55,7 @@ export const createScene = (el) => {
       scaleModelToHeight:2,
       scaleModelToWidth: 2,
       scaleModelToDepth: 2,
-      playerStartPos: {x:0,y:0,z:0},
+      playerStartPos: {x:0,y:-1,z:0},
       floorPlan: [{type:'list',
                   spots:[  {pos:{x: -0.10944072448069289, y: -1.6, z: -6.047203540802002}, dims:{width:1.5, height: 1.5}},
                            {pos:{x: -0.06733116066026976, y: -0.8, z: -16.733196258544922}, dims:{width:1.5, height: 3}},
