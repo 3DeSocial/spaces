@@ -23,7 +23,10 @@
 				<option value="amphitheater">Amphitheater</option><option value="round_showroom">roundshowroom</option><option value="art_showroom">art_showroom</option><option value="aztec_temple">aztec_temple</option><option value="big_room">big_room</option></select> -->
 				
 		</div>
+
 	</div>
+	<div class="d3d-btn view-vr-btn" style="display: none;">Enter VR</div>
+
 </div>	
   
 
