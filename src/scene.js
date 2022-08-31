@@ -57,22 +57,22 @@ export const createScene = (el) => {
       scaleModelToDepth: 2,
       playerStartPos: {x:0,y:0,z:0},
       floorPlan: [{type:'list',
-                  spots:[ {pos:{x: -0.10944072448069289, y: -1.5, z: -6.047203540802002}, dims:{width:1.5, height: 3}, rot:{x:0,y:1.57079632679,z:0}},
-                           {pos:{x: -0.06733116066026976, y: -1.5, z: -16.733196258544922}, dims:{width:1.5, height: 3}},
-                           {pos:{x: 7.697452392578127, y: -1.5, z: -11.542924826859029}, dims:{width:1.5, height: 3}},
-                           {pos:{x: -7.731833457946777, y: -1.5, z: -11.617785725239571}, dims:{width:1.5, height: 3}},
-                           {pos:{x: -0.013148501254326372, y: -1.5, z: 6.044923782348633}, dims:{width:1.5, height: 3}},
-                           {pos:{x: -0.07595948011816395, y: -1.5, z: 16.75197982788086}, dims:{width:1.5, height: 3}},
-                           {pos:{x: -7.731833457946778, y: -1.5, z: 11.544662040888163}, dims:{width:1.5, height: 3}},
-                           {pos:{x: 7.6974523925781275, y: -1.5, z: 11.73381267645709}, dims:{width:1.5, height: 3}},
-                           {pos:{x: 19.842348098754883, y: -1.5, z: 0.18324702120981307}, dims:{width:1.5, height: 3}},
-                           {pos:{x: 13.694782536404347, y: -1.5, z: 7.228099822998047}, dims:{width:1.5, height: 3}},
-                           {pos:{x: 13.826883017001107, y: -1.5, z: -7.377546310424805}, dims:{width:1.5, height: 3}},
-                           {pos:{x: -19.87673095703125, y: -1.5, z: 0.09557420748106615}, dims:{width:1.5, height: 3}},
-                           {pos:{x: -13.708802988665713, y: -1.5, z: -7.377546310424806}, dims:{width:1.5, height: 3}},
-                           {pos:{x: -13.885168501713958, y: -1.5, z: 7.228099822998047}, dims:{width:1.5, height: 3}},
-                           {pos:{x: 0.03363594261864499, y: -1.5, z: -5.7066845703125}, dims:{width:1.5, height: 3}},
-                           {pos:{x: -0.07060150805972984, y: -1.5, z: 5.704404830932617}, dims:{width:1.5, height: 3}}]}]
+                  spots:[  {pos:{x: -0.10944072448069289, y: -1.6, z: -6.047203540802002}, dims:{width:1.5, height: 1.5}},
+                           {pos:{x: -0.06733116066026976, y: -0.8, z: -16.733196258544922}, dims:{width:1.5, height: 3}},
+                           {pos:{x: 7.697452392578127, y: -0.8, z: -11.542924826859029}, dims:{width:1.5, height: 2.25}, rot:{x:0,y:1.57079632679,z:0}},
+                           {pos:{x: -7.731833457946777, y: -0.8, z: -11.617785725239571}, dims:{width:1.5, height: 2.25}, rot:{x:0,y:1.57079632679,z:0}},
+                           {pos:{x: -0.013148501254326372, y: -1.6, z: 6.044923782348633}, dims:{width:1.5, height: 1.5}},
+                           {pos:{x: -0.07595948011816395, y: -0.8, z: 16.75197982788086}, dims:{width:1.5, height: 3}},
+                           {pos:{x: -7.731833457946778, y: -0.8, z: 11.544662040888163}, dims:{width:1.5, height: 3}, rot:{x:0,y:1.57079632679,z:0}},
+                           {pos:{x: 7.6974523925781275, y: -0.8, z: 11.73381267645709}, dims:{width:1.5, height: 3}, rot:{x:0,y:1.57079632679,z:0}},
+                           {pos:{x: 19.842348098754883, y: -1.4, z: 0.18324702120981307}, dims:{width:1.5, height: 3}, rot:{x:0,y:1.57079632679,z:0}},
+                           {pos:{x: 13.694782536404347, y: -1.4, z: 7.228099822998047}, dims:{width:1.5, height: 2.25}},
+                           {pos:{x: 13.826883017001107, y: -1.4, z: -7.377546310424805}, dims:{width:1.5, height: 2.25}},
+                           {pos:{x: -19.87673095703125, y: -1.4, z: 0.09557420748106615}, dims:{width:1.5, height: 3}, rot:{x:0,y:1.57079632679,z:0}},
+                           {pos:{x: -13.708802988665713, y: -1.4, z: -7.377546310424806}, dims:{width:1.5, height: 2.25}},
+                           {pos:{x: -13.885168501713958, y: -1.4, z: 7.228099822998047}, dims:{width:1.5, height: 2.25}},
+                           {pos:{x: 0.03363594261864499, y: -1.6, z: -5.7066845703125}, dims:{width:1.5, height: 1.5}},
+                           {pos:{x: -0.07060150805972984, y: -1.6, z: 5.704404830932617}, dims:{width:1.5, height: 1.5}}]}]
 
     },
     'amphitheater':{
@@ -83,7 +83,7 @@ export const createScene = (el) => {
       scaleModelToHeight: 7,
       scaleModelToWidth: 7,
       scaleModelToDepth: 7,
-      playerStartPos: { x: -1, y: 4 ,z: -24 },
+      playerStartPos: { x: -0.8, y: 4 ,z: -24 },
       floorPlan: [{type:'centerPiece',
                 maxItems: 1},
                 {type:'circle',
@@ -357,15 +357,14 @@ const parse2DNFTData = async(nft) =>{
 
           var height = this.height;
           var width = this.width;
- 
+          let dims = calculateAspectRatioFit(width, height, 4,2.75);
           const textureLoader = new THREE.TextureLoader()
                 textureLoader.crossOrigin = ""
           const texture = textureLoader.load(this.src);
-
-          const geometry = new THREE.BoxGeometry( width, height, 0.10 );
+          const geometry = new THREE.BoxGeometry( dims.width, dims.height, 0.10 );
           const materials = createMats(texture);
           const nftMesh = new THREE.Mesh( geometry, materials );
-          let nftImgData = {is3D:nft.is3D, nft:nftData, mesh: nftMesh, imageUrl: imageUrl, width:width, height:height};
+          let nftImgData = {is3D:nft.is3D, nft:nftData, mesh: nftMesh, imageUrl: imageUrl, width:dims.width, height:dims.height};
           resolve(nftImgData);
     };
 
@@ -377,6 +376,13 @@ const parse2DNFTData = async(nft) =>{
     img.src = proxyImageURL;
 
   })
+}
+
+const calculateAspectRatioFit = (srcWidth, srcHeight, maxWidth, maxHeight) => {
+
+    var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+
+    return { width: srcWidth*ratio, height: srcHeight*ratio };
 }
 
 const createMats = (texture) =>{
