@@ -15,10 +15,14 @@ export const createScene = (el) => {
 
   /* TODO Get these parameters from NFT stored gallery preferences instead of URL  */
   var sceneryName = urlParams.get('scenery');
-  console.log('sceneryName: '+sceneryName);
+    console.log('sceneryName from url: '+sceneryName);
+
   if(!sceneryName){
     sceneryName = 'art1';
   };
+  console.log('sceneryName: '+sceneryName);
+
+
   let vrControls = "walking";
   let vrControlsParam =  urlParams.get('vrcontrols'); 
 
