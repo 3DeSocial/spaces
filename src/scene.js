@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import * as D3D from '3d-nft-viewer'
 let counter = 0;
 //const PROXYURL = 'http://nftzexpress.azurewebsites.net/proxy?url='; //URL and parameter to add to request for image
-const PROXYURL = 'https://tiny-cors-proxy.vercel.app:3001/proxy?url='; //URL and parameter to add to request for image
+const PROXYURL = 'http://localhost:3001/proxy?url='; //URL and parameter to add to request for image
   //create array of nfts to view
   let nfts3D = [];
   let nfts2D = [];
