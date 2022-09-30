@@ -1,9 +1,11 @@
 import * as THREE from 'three';    
 import * as D3D from '3d-nft-viewer'
+
+
 let counter = 0;
 const PROXYURL = 'https://backend.nftz.zone/api/query/getimage?url='; //URL and parameter to add to request for image
 
-export const createScene = (el) => {
+export const createScene = async (el) => {
 
   /*  Get username from url - this will be gallery name in nftz  */
   const urlParams = new URLSearchParams(window.location.search);
@@ -15,6 +17,10 @@ export const createScene = (el) => {
 if(!userName){
   userName = 'Swafs';
 }
+
+let ownerProfile = await getOwner(userName);
+console.log(ownerProfile);
+ 
   if(!sceneryName){
     sceneryName = 'art1';
   };
@@ -136,9 +142,10 @@ if(!userName){
     avatarSize: {width: 1, height:1, depth:1}, // Max dimensions of avatar
     vrType:vrControls, // default to walking unless vrcontrols=flying is in url params
     sceneryOptions: sceneryOptions[sceneryName],
-    user: {
-      userName: 'AndrewVanDuivenbode',
-      publicKey: '1e25c4f29d76c8989db411f5c3171d87ec715ca2ad01498cb47d77ba5df7c6e5'
+    owner: {
+      ownerName: ownerProfile.username,
+      ownerPublicKey: ownerProfile.publicKeyBase58Check,
+      ownerDescription: ownerProfile.description
     },
     //Pass Deso API functions
     chainAPI: {
@@ -158,12 +165,15 @@ if(!userName){
   fetch('https://nftzapi.azurewebsites.net/api/creator/nfts?datatype=0&username='+userName )
     .then((response) => {
       response.json().then((nfts)=>{
-        console.log('no nfts: ',nfts.length);
-        console.log(nfts);
         spaceViewer.initSpace({sceneAssets:nfts});
       });
     });
 
 }
 
+const getOwner = async (userName) =>{
+  const response = await fetch('https://backend.nftz.zone/api/query/getcreator?username='+userName );
+  const profile = await response.json();
+  return profile;
+}
 
