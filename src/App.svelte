@@ -5,7 +5,6 @@
 	let el;
 
 	onMount(() => {
-	console.log('creating scene');
 		el = document.querySelector('#space-ctr');
 		createScene(el);
 	});

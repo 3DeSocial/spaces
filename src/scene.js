@@ -19,7 +19,7 @@ if(!userName){
 }
 
 let ownerProfile = await getOwner(userName);
-console.log(ownerProfile);
+//console.log(ownerProfile);
  
   if(!sceneryName){
     sceneryName = 'art1';
@@ -62,7 +62,7 @@ console.log(ownerProfile);
       scaleModelToHeight:2,
       scaleModelToWidth: 2,
       scaleModelToDepth: 2,
-      playerStartPos: {x:0,y:-1,z:0},
+      playerStartPos: {x:0,y:1,z:0},
       floorPlan: [{type:'list',
  spots:[{id:15, pos:{x: -0.07060150805972984, y: -1.2, z: 5.704404830932617}, dims:{width:1.5, height: 1.5}},
         {id:14, pos:{x: 0.03363594261864499, y: -1.2, z: -5.7066845703125}, dims:{width:1.5, height: 1.5}},
@@ -138,7 +138,7 @@ console.log(ownerProfile);
     scaleModelToHeight:2,
     scaleModelToWidth: 2,
     scaleModelToDepth: 2,   
-    playerStartPos: {x:0,y:4,z:0},  // location in the environment where the player will appear
+    playerStartPos: {x:0,y:3,z:0},  // location in the environment where the player will appear
     avatarSize: {width: 1, height:1, depth:1}, // Max dimensions of avatar
     vrType:vrControls, // default to walking unless vrcontrols=flying is in url params
     sceneryOptions: sceneryOptions[sceneryName],
