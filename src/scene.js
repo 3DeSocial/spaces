@@ -1,7 +1,6 @@
 import * as THREE from 'three';    
 import * as D3D from '3d-nft-viewer'
 
-
 let counter = 0;
 const PROXYURL = 'https://backend.nftz.zone/api/query/getimage?url='; //URL and parameter to add to request for image
 

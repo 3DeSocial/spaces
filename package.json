@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "3d-nft-viewer": "https://github.com/3DeSocial/3d-nft-viewer-npm",
+    "animejs": "^3.2.1",
     "deso-protocol": "^0.3.1",
     "dom-to-image": "^2.6.0",
     "html2canvas": "^1.4.1",
