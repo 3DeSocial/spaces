@@ -23,5 +23,7 @@
 <div bind:this={el} id="nft-ctr" class="nft-ctr">
 	<div class="d3d-btn view-vr-btn" style="display: none;">Enter VR</div>
 	<div id="view-full" class="d3d-btn view-vr-btn">Full Screen</div>
+	<div id="give-diamond" class="d3d-btn view-vr-btn">💎</div>
+	<div id="give-heart" class="d3d-btn view-vr-btn">❤</div>
 
 </div>	
