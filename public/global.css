@@ -18,17 +18,55 @@ html, body, #space-ctr {
   left: 50%;
   transform: translate(-50%, -50%);
   line-height: 1.5em;
-  letter-spacing: 0.1em;
   font-size: 16px;
   background-color: #000;
   opacity: 0.8;
+
+}
+#hud-text h4 {
+  display: block;
+  width: 100%;
+  margin: 0;
+}
+#hud-text {
+        display: flex;
+    flex-direction: row;
   overflow-y: auto;
 }
+#hud-text dd,
+#hud-text dt{
+  margin: 0;
+  margin-left: 0;  
+  float: left;
+}
+#hud-text dt {
+  clear: left;
+  width: 9em;
+}
+#hud-text a.nftsUrl {
+  display: block;
+}
+.flex-left {
+    width: 40%;
+}
+
+.flex-right {
+    width: 60%;
+}
+
 #hud-content .buttons{
   position: absolute;
   bottom: 1em;
   right: 1em;
   display: block;
+}
+#hud-content dl{
+  display: inline-block;
+
+}
+#hud-content p{
+  display: inline-block;
+
 }
 
 @media (hover:none), (hover:on-demand){ 
