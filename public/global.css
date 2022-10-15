@@ -1,10 +1,28 @@
-html, body, #space-ctr {
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   position: relative;
   font-family: -apple-system, BlinkMacSystemFont, Arial ,'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#space-ctr, #loader-ctr {
+  width: 100%;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  font-family: -apple-system, BlinkMacSystemFont, Arial ,'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+padding: 0;
+float: left;    
+}
+
+#loader-ctr{
+  background: #000;
+  color: #fff;
+
 }
 
 #nft-overlay-holder.svelte-n8t4is.svelte-n8t4is {
@@ -116,8 +134,8 @@ button#VRButton {
 
 #hud-content .buttons{
   position: absolute;
-  bottom: 1em;
-  right: 1em;
+  bottom: 0em;
+  right: 0.5em;
   display: block;
 }
 #hud-content dl{
@@ -135,22 +153,16 @@ button#VRButton {
     width: 90%;
   }
 }
-.nft-button-grad{
+#hud-content .nft-button-grad{
   font-size: .9em;
-border-radius: 4px;
-border: none;
-color: #e7f0ef;
-font-weight: 800;
-text-align: center;
-text-transform: uppercase;
-background: #346562;
-}
-.loader-ctr {
-  background: #000;
-  color: #fff;
-  position:fixed;
-  width: 100%;
-  height: 100%;
+  border-radius: 4px;
+  border: none;
+  color: #e7f0ef;
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  background: #346562;
+  width: auto;
 }
 
 .loader-ctr .inner {
@@ -245,7 +257,7 @@ form.nft-3d-overlay {
   text-align: center;
   color: #F00;
 }
-#nft-ctr{
+#space-ctr .toolbar{
   background-color: #000;
   opacity: 0.5;
   position: absolute;
@@ -257,4 +269,44 @@ form.nft-3d-overlay {
 
 .d3d-btn.disabled{
   opacity: 0.5;
-}`
+}
+
+#space-ctr .statusbar{
+  background-color: #000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  height: 2.25em;
+  left: 0;
+  right: 0;
+}
+#space-ctr .d3d-btn-top {
+    cursor: pointer;
+  padding: 0.17em 0em;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  letter-spacing: .5px;
+  position: absolute;
+  top: 0.25em;
+  display: none;
+  width: 4em;
+  text-align: center;
+}
+#diamond-count.d3d-btn-top{
+  color: #f00;
+  right: 10em;  
+  color: #fff;
+}
+#heart.d3d-btn-top{
+  color: #f00;
+  right: 13em;  
+}
+#confirm.d3d-btn-top{
+  right: 0;
+  width: 10em;
+}
+#trx-confirm {
+  padding: 0.25em 0.5em;
+}
