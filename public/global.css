@@ -126,7 +126,8 @@ button#VRButton {
 }
 #hud-content p{
   display: inline-block;
-
+  overflow-y: auto;
+  max-height: 15em;
 }
 
 @media (hover:none), (hover:on-demand){ 
