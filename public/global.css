@@ -190,60 +190,70 @@ form.nft-3d-overlay {
 }
 #VRButton {
   cursor: pointer;
-padding: 0.25em 0.4em;
-
+  padding: 0.25em 0.4em;
   box-sizing: border-box;
   border-radius: 4px;
   font-weight: 700;
   border: 1px solid transparent;
   letter-spacing: .5px;
   position: absolute;
-bottom: 0;
-left: 0;
+  bottom: 0;
+  left: 0;
 }
 #view-full {
-cursor: pointer;
-padding: 0.25em 0.4em;
-box-sizing: border-box;
-border-radius: 4px;
-font-weight: 700;
-border: 1px solid transparent;
-letter-spacing: .5px;
-position: absolute;
-bottom: 0;
-left: 5.6em;
-display: none;
+  cursor: pointer;
+  padding: 0.25em 0.4em;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  letter-spacing: .5px;
+  position: absolute;
+  bottom: 0;
+  left: 6.5em;
+  display: none;
 }
 #give-diamond{
   cursor: pointer;
-padding: 0.17em 0em;
-
-box-sizing: border-box;
-border-radius: 4px;
-font-weight: 700;
-border: 1px solid transparent;
-letter-spacing: .5px;
-position: absolute;
-bottom: 0;
-left: 12.5em;
-display: none;
-width: 1.5em;
-text-align: center;
+  padding: 0.17em 0em;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  letter-spacing: .5px;
+  position: absolute;
+  bottom: 0;
+  right: 5em;
+  display: none;
+  text-align: center;
+  width: 4em;
 }
 #give-heart{
   cursor: pointer;
-padding: 0.17em 0em;
-
-box-sizing: border-box;
-border-radius: 4px;
-font-weight: 700;
-border: 1px solid transparent;
-letter-spacing: .5px;
-position: absolute;
-bottom: 0;
-left: 14.25em;
-display: none;
-width: 1.5em;
-text-align: center;
-color: #F00;
+  padding: 0.17em 0em;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  letter-spacing: .5px;
+  position: absolute;
+  bottom: 0;
+  right: 0em;
+  display: none;
+  width: 4em;
+  text-align: center;
+  color: #F00;
 }
+#nft-ctr{
+  background-color: #000;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 0;
+  height: 42px;
+  left: 0;
+  right: 0;
+}
+
+.d3d-btn.disabled{
+  opacity: 0.5;
+}`
